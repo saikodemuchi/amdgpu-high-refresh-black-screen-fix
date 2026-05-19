@@ -1,10 +1,20 @@
-# amdgpu-high-refresh-black-screen-fix
+# AMDGPU High Refresh Rate Black Screen Fix
 
-EN: This fix may help with AMD GPU screen blanking or black screen problems on Linux when using high refresh rates like 120>hz.
+## English
 
-Installation: Place the `amdgpu-clocks.conf` file from the repository in `/etc/tmpfiles.d/` and reboot the computer. Or create the file manually:
+This fix may help with AMD GPU screen blanking or black screen problems on Linux when using high refresh rates above 120Hz.
 
-Create the tmpfiles config:
+## Installation
+
+Place the `amdgpu-clocks.conf` file from this repository into:
+
+```text
+/etc/tmpfiles.d/
+```
+
+Then reboot your computer.
+
+Or create the file manually:
 
 ```bash
 sudo nano /etc/tmpfiles.d/amdgpu-clocks.conf
@@ -23,31 +33,41 @@ Then reboot your system:
 sudo reboot
 ```
 
-> Note: `card1` may be different on your system.
+> **Note:** `card1` may be different on your system.
 
+---
 
-RU: Этот фикс может помочь, если на Linux с AMD видеокартой тухнет экран или появляется чёрный экран при высокой герцовке, например больше 120hz.
+## Русский
 
-Установка: Разместите файл с репозитори `amdgpu-clocks.conf` по пути `/etc/tmpfiles.d/` и перезагрузите компьютер для работы. Или вручную создайте файл:
+Этот фикс может помочь, если на Linux с AMD видеокартой тухнет экран или появляется чёрный экран при высокой герцовке, например выше 120Hz.
 
+## Установка
 
-Создайте конфиг файл tmpfiles:
+Разместите файл `amdgpu-clocks.conf` из этого репозитория по пути:
+
+```text
+/etc/tmpfiles.d/
+```
+
+После этого перезагрузите компьютер.
+
+Или создайте файл вручную:
 
 ```bash
 sudo nano /etc/tmpfiles.d/amdgpu-clocks.conf
 ```
 
-И добавьте это:
+Добавьте эти строки:
 
 ```conf
 w /sys/class/drm/card1/device/power_dpm_force_performance_level - - - - manual
 w /sys/class/drm/card1/device/pp_dpm_mclk - - - - 3
 ```
 
-После чего перезагрузите компьютер.
+После этого перезагрузите компьютер:
 
 ```bash
 sudo reboot
 ```
 
-> Предупреждение: `card1` может отличаться на вашей системе.
+> **Предупреждение:** `card1` может отличаться на вашей системе.
