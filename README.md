@@ -1,0 +1,1 @@
+# amdgpu-high-refresh-black-screen-fix
