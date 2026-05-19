@@ -1,6 +1,6 @@
-# AMDGPU High Refresh Rate Black Screen Fix
+AMDGPU High Refresh Rate Black Screen Fix
 
-## English
+## EN
 
 This fix may help with AMD GPU screen blanking or black screen problems on Linux when using high refresh rates above 120Hz.
 
@@ -37,7 +37,7 @@ sudo reboot
 
 ---
 
-## Русский
+## RU
 
 Этот фикс может помочь, если на Linux с AMD видеокартой тухнет экран или появляется чёрный экран при высокой герцовке, например выше 120Hz.
 
